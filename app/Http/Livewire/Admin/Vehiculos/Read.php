@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Carros;
+namespace App\Http\Livewire\Admin\Vehiculos;
 
-use App\Models\Carros;
+use App\Models\Vehiculos;
 use Livewire\Component;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\WithPagination;
@@ -17,12 +17,12 @@ class Read extends Component
 
     protected $queryString = ['search'];
 
-    protected $listeners = ['carrosDeleted'];
+    protected $listeners = ['vehiculosDeleted'];
 
     public $sortType;
     public $sortColumn;
 
-    public function carrosDeleted(){
+    public function vehiculosDeleted(){
         // Nothing ..
     }
 
@@ -36,9 +36,9 @@ class Read extends Component
 
     public function render()
     {
-        $data = Carros::query();
+        $data = Vehiculos::query();
 
-        $instance = getCrudConfig('carros');
+        $instance = getCrudConfig('vehiculos');
         if($instance->searchable()){
             $array = (array) $instance->searchable();
             $data->where(function (Builder $query) use ($array){
@@ -63,8 +63,8 @@ class Read extends Component
 
         $data = $data->paginate(config('easy_panel.pagination_count', 15));
 
-        return view('livewire.admin.carros.read', [
-            'carross' => $data
-        ])->layout('admin::layouts.app', ['title' => __(\Str::plural('Carros')) ]);
+        return view('livewire.admin.vehiculos.read', [
+            'vehiculoss' => $data
+        ])->layout('admin::layouts.app', ['title' => __(\Str::plural('Vehiculos')) ]);
     }
 }

@@ -55,5 +55,11 @@
     "Nombre": "Nombre",
     "Marca": "Marca",
     "Color": "Color",
-    "Carros": "Carros"
+    "Carros": "Carros",
+    "Codigo_auto": "Codigo_auto",
+    "Placa": "Placa",
+    "Age": "Age",
+    "Serial": "Serial",
+    "Año": "Año",
+    "Vehiculos": "Vehiculos"
 }

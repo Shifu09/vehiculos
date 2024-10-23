@@ -12,7 +12,7 @@ return [
     'lang' => 'en',
 
     // Your user Model
-    'user_model' => file_exists(app_path('User.php')) ? App\User::class : App\Models\User::class,
+    'user_model' => file_exists(app_path('User.php')) ? App\Models\User::class : App\Models\User::class,
 
     // set default guard to authenticate admins
     'auth_guard' => config('auth.defaults.guard') ?? 'web',
@@ -37,7 +37,7 @@ return [
     'additional_middlewares' => [],
 
     // Count of pagination in CRUD lists
-    'pagination_count' => 20,
+    'pagination_count' => 10,
 
     // Lazy validation for Livewire components
     'lazy_mode' => true,

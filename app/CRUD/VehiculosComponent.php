@@ -5,8 +5,9 @@ namespace App\CRUD;
 use EasyPanel\Contracts\CRUDComponent;
 use EasyPanel\Parsers\Fields\Field;
 use App\Models\Carros;
+use App\Models\Vehiculos;
 
-class CarrosComponent implements CRUDComponent
+class VehiculosComponent implements CRUDComponent
 {
     // Manage actions in crud
     public $create = true;
@@ -19,30 +20,33 @@ class CarrosComponent implements CRUDComponent
 
     public function getModel()
     {
-        return Carros::class;
+        return Vehiculos::class;
     }
 
     // which kind of data should be showed in list page
     public function fields()
     {
-        return ['nombre', 'marca', 'color'];
+        return ['codigo_auto', 'placa', 'marca', 'color', 'age', 'serial'];
     }
 
     // Searchable fields, if you dont want search feature, remove it
     public function searchable()
     {
-        return ['nombre', 'marca', 'color'];
+        return ['codigo_auto', 'placa', 'marca', 'color', 'age', 'serial'];
     }
 
     // Write every fields in your db which you want to have a input
-    // Available types : "ckeditor", "checkbox", "text", "select", "file", "textarea"
+    // Available types : "ckeditor", "checkbox", "string", "select", "file", "stringarea"
     // "password", "number", "email", "select", "date", "datetime", "time"
     public function inputs()
     {
         return [
-            'nombre' => 'text',
+            'codigo_auto' => 'text',
+            'placa' => 'text',
             'marca' => 'text',
             'color' => 'text',
+            'age' => 'text',
+            'serial' => 'text',
         ];
     }
 
@@ -51,9 +55,12 @@ class CarrosComponent implements CRUDComponent
     public function validationRules()
     {
         return [
-            'nombre' => 'required',
-            'marca' => 'required',
-            'color' => 'required',
+            'codigo_auto' => 'required|unique:carros',
+            'placa' => 'required|string',
+            'marca' => 'required|string',
+            'color' => 'required|string',
+            'age' => 'required|numeric',
+            'serial' => 'required|string',
         ];
     }
 
