@@ -36,7 +36,7 @@
     "Namespace is invalid": "El nombre es invalido",
     "Model": "Modelo",
     "Route": "Route",
-    "Status": "Status",
+    "Status": "Estatus",
     "Built": "Built",
     "CRUD's Route": "CRUD's Route",
     "Your CRUD list": "Your CRUD list",
@@ -61,5 +61,11 @@
     "Age": "Año",
     "Serial": "Serial",
     "Año": "Año",
-    "Vehiculos": "Vehiculo"
+    "Vehiculos": "Vehiculo",
+    "Apellido": "Apellido",
+    "Telefono": "Telefono",
+    "Choferes": "Choferes",
+    "Img": "Img",
+    "User's profile": "User's profile",
+    "img": "img"
 }

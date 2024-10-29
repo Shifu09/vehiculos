@@ -61,5 +61,11 @@
     "Age": "Age",
     "Serial": "Serial",
     "Año": "Año",
-    "Vehiculos": "Vehiculos"
+    "Vehiculos": "Vehiculos",
+    "Apellido": "Apellido",
+    "Telefono": "Telefono",
+    "Choferes": "Choferes",
+    "Img": "Img",
+    "User's profile": "User's profile",
+    "img": "img"
 }
