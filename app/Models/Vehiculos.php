@@ -17,4 +17,8 @@ class Vehiculos extends Model
         'age',
         'serial',
     ];
+    public function mantenimiento()
+    {
+        return $this->belongsTo(Mantenimiento::class, 'codigo_auto');
+    }
 }

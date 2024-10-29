@@ -67,5 +67,12 @@
     "Choferes": "Choferes",
     "Img": "Img",
     "User's profile": "User's profile",
-    "img": "img"
+    "img": "img",
+    "Tipo": "Tipo",
+    "Fecha": "Fecha",
+    "Observaciones": "Observaciones",
+    "Mantenimiento": "Mantenimiento",
+    "Mantenimientos": "Mantenimientos",
+    "Vehiculo": "Vehiculo",
+    "Id_vehiculo": "Id_vehiculo"
 }

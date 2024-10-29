@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('mantenimientos', function (Blueprint $table) {
             $table->id();
+            $table->string('id_vehiculo')->foreign('id_vehiculo')->references('id')->on('carros');
+            $table->string('tipo');
+            $table->date('fecha');
+            $table->string('observaciones');
             $table->timestamps();
         });
     }
