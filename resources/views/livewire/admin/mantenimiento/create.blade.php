@@ -21,6 +21,7 @@
                 <select id='input-id_vehiculo' wire:model.lazy='id_vehiculo'
                     class="form-control  @error('id_vehiculo') is-invalid @enderror" placeholder="e">
                     @foreach (getCrudConfig('Mantenimiento')->inputs()['id_vehiculo']['select'] as $key => $value)
+                        <option hidden selected>Seleccione una opción</option>
                         <option value='{{ $key }}'>{{ $value }} </option>
                     @endforeach
                 </select>
