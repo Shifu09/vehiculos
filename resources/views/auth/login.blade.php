@@ -21,7 +21,7 @@
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
 
-                                        <h1 class="h2" style="text-align: center">AGUAS DE MÉRIDA, C.A</h1>
+                                        <h1 class="h2" style="text-align: center">AGUAS DE MÉRIDA, C.A.</h1>
                                         <p class="mb-4 lead" style="text-align: center">Sistema de Gestión de Vehículos</p>
                                         <div class="form-group mb-4 mt-2">
                                             <label for="email" class="mb-2">Correo Electronico</label>
@@ -83,7 +83,7 @@
             --ezy-form-card-shadow: none;
 
             background-color: var(--bs-body-bg);
-            padding: 2%;
+            padding: 3.2%;
         }
 
         /* Gray Block Style */

@@ -17,7 +17,7 @@
                     <div class="row justify-content-between mt-4 mb-4">
                         @if (getCrudConfig('Mantenimiento')->create && hasPermission(getRouteName() . '.mantenimiento.create', 0, 0))
                             <div class="col-md-4 right-0">
-                                <a style="border-radius: 20px" href="@route(getRouteName() . '.mantenimiento.create')"
+                                <a style="border-radius: 13px" href="@route(getRouteName() . '.mantenimiento.create')"
                                     class="btn btn-success">{{ __('CreateTitle', ['name' => __('Mantenimiento')]) }}</a>
                             </div>
                         @endif

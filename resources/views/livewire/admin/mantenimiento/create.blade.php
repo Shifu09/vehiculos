@@ -19,10 +19,9 @@
             <div class='form-group'>
                 <label for='input-id_vehiculo' class='col-sm-2 control-label '> {{ __('Vehiculo') }}</label>
                 <select id='input-id_vehiculo' wire:model.lazy='id_vehiculo'
-                    class="form-control  @error('id_vehiculo') is-invalid @enderror" placeholder="e">
+                    class="form-control  @error('id_vehiculo') is-invalid @enderror">
                     @foreach (getCrudConfig('Mantenimiento')->inputs()['id_vehiculo']['select'] as $key => $value)
-                        <option hidden selected>Seleccione una opción</option>
-                        <option value='{{ $key }}'>{{ $value }} </option>
+                        <option value='{{ $key }}'>{{ $value }}</option>
                     @endforeach
                 </select>
                 @error('id_vehiculo')
@@ -31,11 +30,10 @@
             </div>
             <!-- Tipo Input -->
             <div class='form-group'>
-                <label for='input-tipo' class='col-sm-2 control-label '> {{ __('Tipo de Mantenimiento') }}</label>
+                <label for='input-tipo' class='col-sm-2 control-label '> {{ __('Tipo de mantenimiento') }}</label>
                 <select id='input-tipo' wire:model.lazy='tipo'
                     class="form-control  @error('tipo') is-invalid @enderror">
                     @foreach (getCrudConfig('Mantenimiento')->inputs()['tipo']['select'] as $key => $value)
-                        <option hidden selected>Seleccione una opción</option>
                         <option value='{{ $key }}'>{{ $value }}</option>
                     @endforeach
                 </select>

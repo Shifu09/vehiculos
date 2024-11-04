@@ -50,11 +50,11 @@ class ChoferesComponent implements CRUDComponent
     // It uses Laravel validation system
     public function validationRules()
     {
-        return [
-            'nombre' => 'required|string',
-            'apellido' => 'required|string',
-            'telefono' => 'required|numeric',
-        ];
+        // return [
+        //     'nombre' => 'required|string',
+        //     'apellido' => 'required|string',
+        //     'telefono' => 'required|numeric',
+        // ];
     }
 
     // Where files will store for inputs
