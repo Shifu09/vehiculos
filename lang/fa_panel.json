@@ -74,5 +74,10 @@
     "Mantenimiento": "Mantenimiento",
     "Mantenimientos": "Mantenimientos",
     "Vehiculo": "Vehiculo",
-    "Id_vehiculo": "Id_vehiculo"
+    "Id_vehiculo": "Id_vehiculo",
+    "Id_chofer": "Id_chofer",
+    "Destino": "Destino",
+    "Kilometraje": "Kilometraje",
+    "Salida": "Salida",
+    "Salidas": "Salidas"
 }

@@ -2,11 +2,13 @@
 
 namespace App\CRUD;
 
+use App\Models\Choferes;
 use EasyPanel\Contracts\CRUDComponent;
 use EasyPanel\Parsers\Fields\Field;
-use App\Models\Choferes;
+use App\Models\Salida;
+use App\Models\Vehiculos;
 
-class ChoferesComponent implements CRUDComponent
+class SalidaComponent implements CRUDComponent
 {
     // Manage actions in crud
     public $create = true;
@@ -19,19 +21,19 @@ class ChoferesComponent implements CRUDComponent
 
     public function getModel()
     {
-        return Choferes::class;
+        return Salida::class;
     }
 
     // which kind of data should be showed in list page
     public function fields()
     {
-        return ['nombre', 'apellido', 'telefono'];
+        return ['id_vehiculo', 'id_chofer', 'destino', 'kilometraje', 'fecha', 'observaciones'];
     }
 
     // Searchable fields, if you dont want search feature, remove it
     public function searchable()
     {
-        return ['nombre', 'apellido'];
+        return ['destino', 'kilometraje', 'fecha', 'id_vehiculo', 'id_chofer'];
     }
 
     // Write every fields in your db which you want to have a input
@@ -39,10 +41,23 @@ class ChoferesComponent implements CRUDComponent
     // "password", "number", "email", "select", "date", "datetime", "time"
     public function inputs()
     {
+        $vehiculosArray = [];
+        $vehiculos = Vehiculos::all();
+        foreach ($vehiculos as $vehiculo) {
+            $vehiculosArray[$vehiculo->id] = $vehiculo->marca;
+        }
+        $choferesArray = [];
+        $choferes = Choferes::all();
+        foreach ($choferes as $chofer) {
+            $choferesArray[$chofer->id] = $chofer->nombre;
+        }
         return [
-            'nombre' => 'text',
-            'apellido' => 'text',
-            'telefono' => 'text',
+            'id_vehiculo' => ['select' => $vehiculosArray],
+            'id_chofer' => ['select' => $choferesArray],
+            'destino' => 'text',
+            'kilometraje' => 'text',
+            'fecha' => 'datetime',
+            'observaciones' => 'text',
         ];
     }
 
@@ -50,11 +65,7 @@ class ChoferesComponent implements CRUDComponent
     // It uses Laravel validation system
     public function validationRules()
     {
-        return [
-            'nombre' => 'required|string',
-            'apellido' => 'required|string',
-            'telefono' => 'required|numeric',
-        ];
+        return [];
     }
 
     // Where files will store for inputs

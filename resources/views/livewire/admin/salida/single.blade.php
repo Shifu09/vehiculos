@@ -1,28 +1,28 @@
 <tr x-data="{ modalIsOpen: false }">
-    <td class="">{{ $mantenimiento->vehiculo->marca }}</td>
-    <td class="">{{ $mantenimiento->tipo }}</td>
-    <td class="">{{ $mantenimiento->fecha }}</td>
-    <td class="">{{ $mantenimiento->observaciones }}</td>
+    <td class="">{{ $salida->vehiculo->marca }}</td>
+    <td class="">{{ $salida->chofer->nombre }}</td>
+    <td class="">{{ $salida->destino }}</td>
+    <td class="">{{ $salida->kilometraje }}</td>
+    <td class="">{{ $salida->fecha }}</td>
+    <td class="">{{ $salida->observaciones }}</td>
 
-    @if (getCrudConfig('Mantenimiento')->delete or getCrudConfig('Mantenimiento')->update)
+    @if (getCrudConfig('Salida')->delete or getCrudConfig('Salida')->update)
         <td>
 
-            @if (getCrudConfig('Mantenimiento')->update &&
-                    hasPermission(getRouteName() . '.mantenimiento.update', 1, 1, $mantenimiento))
-                <a href="@route(getRouteName() . '.mantenimiento.update', $mantenimiento->id)" class="btn text-primary mt-1">
+            @if (getCrudConfig('Salida')->update && hasPermission(getRouteName() . '.salida.update', 1, 1, $salida))
+                <a href="@route(getRouteName() . '.salida.update', $salida->id)" class="btn text-primary mt-1">
                     <i class="icon-pencil"></i>
                 </a>
             @endif
 
-            @if (getCrudConfig('Mantenimiento')->delete &&
-                    hasPermission(getRouteName() . '.mantenimiento.delete', 1, 1, $mantenimiento))
+            @if (getCrudConfig('Salida')->delete && hasPermission(getRouteName() . '.salida.delete', 1, 1, $salida))
                 <button @click.prevent="modalIsOpen = true" class="btn text-danger mt-1">
                     <i class="icon-trash"></i>
                 </button>
                 <div x-show="modalIsOpen" class="cs-modal animate__animated animate__fadeIn">
                     <div class="bg-white shadow rounded p-5" @click.away="modalIsOpen = false">
-                        <h5 class="pb-2 border-bottom">{{ __('DeleteTitle', ['name' => __('Mantenimiento')]) }}</h5>
-                        <p>{{ __('DeleteMessage', ['name' => __('Mantenimiento')]) }}</p>
+                        <h5 class="pb-2 border-bottom">{{ __('DeleteTitle', ['name' => __('Salida')]) }}</h5>
+                        <p>{{ __('DeleteMessage', ['name' => __('Salida')]) }}</p>
                         <div class="mt-5 d-flex justify-content-between">
                             <a wire:click.prevent="delete"
                                 class="text-white btn btn-success shadow">{{ __('Yes, Delete it.') }}</a>

@@ -19,7 +19,18 @@
                         <span class="hide-menu">{{ __('CRUD Manager') }}</span>
                     </a>
                 </li>
-
+                <li class="sidebar-item @isActive([getRouteName() . '.role.lists', getRouteName() . '.role.create'], 'selected')">
+                    <a class="sidebar-link @isActive([getRouteName() . '.role.lists', getRouteName() . '.role.create'], 'active') " href="@route(getRouteName() . '.role.lists')" aria-expanded="false">
+                        <i data-feather="package" class="feather-icon"></i>
+                        <span class="hide-menu">{{ __('Role Manager') }}</span>
+                    </a>
+                </li>
+                <li class="sidebar-item @isActive([getRouteName() . '.admins.lists', getRouteName() . '.admins.create'], 'selected')">
+                    <a class="sidebar-link @isActive([getRouteName() . '.admins.lists', getRouteName() . '.admins.create'], 'active') " href="@route(getRouteName() . '.admins.lists')" aria-expanded="false">
+                        <i data-feather="package" class="feather-icon"></i>
+                        <span class="hide-menu">{{ __('Admin Manager') }}</span>
+                    </a>
+                </li>
                 <li class="sidebar-item @isActive(getRouteName() . '.translation', 'selected')">
                     <a class="sidebar-link @isActive(getRouteName() . '.translation', 'active') " href="@route(getRouteName() . '.translation')" aria-expanded="false">
                         <i data-feather="globe" class="feather-icon"></i>

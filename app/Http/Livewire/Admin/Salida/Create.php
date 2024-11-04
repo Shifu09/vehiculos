@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Mantenimiento;
+namespace App\Http\Livewire\Admin\Salida;
 
-use App\Models\Mantenimiento;
+use App\Models\Salida;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -11,14 +11,14 @@ class Create extends Component
     use WithFileUploads;
 
     public $id_vehiculo;
-    public $tipo;
+    public $id_chofer;
+    public $destino;
+    public $kilometraje;
     public $fecha;
     public $observaciones;
     
     protected $rules = [
-        'id_vehiculo' => 'required',
-        'tipo' => 'required',
-        'fecha' => 'required',        
+        
     ];
 
     public function updated($input)
@@ -31,11 +31,13 @@ class Create extends Component
         if($this->getRules())
             $this->validate();
 
-        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('Mantenimiento') ])]);
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('Salida') ])]);
         
-        Mantenimiento::create([
+        Salida::create([
             'id_vehiculo' => $this->id_vehiculo,
-            'tipo' => $this->tipo,
+            'id_chofer' => $this->id_chofer,
+            'destino' => $this->destino,
+            'kilometraje' => $this->kilometraje,
             'fecha' => $this->fecha,
             'observaciones' => $this->observaciones,
             'user_id' => auth()->id(),
@@ -46,7 +48,7 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.admin.mantenimiento.create')
-            ->layout('admin::layouts.app', ['title' => __('CreateTitle', ['name' => __('Mantenimiento') ])]);
+        return view('livewire.admin.salida.create')
+            ->layout('admin::layouts.app', ['title' => __('CreateTitle', ['name' => __('Salida') ])]);
     }
 }
