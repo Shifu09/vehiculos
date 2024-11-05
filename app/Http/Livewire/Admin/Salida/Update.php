@@ -18,19 +18,25 @@ class Update extends Component
     public $kilometraje;
     public $fecha;
     public $observaciones;
-    
+
     protected $rules = [
-        
+        'id_vehiculo' => 'required',
+        'id_chofer' => 'required',
+        'destino' => 'required',
+        'kilometraje' => 'required',
+        'fecha' => 'required',
+        'observaciones' => 'required',
     ];
 
-    public function mount(Salida $Salida){
+    public function mount(Salida $Salida)
+    {
         $this->salida = $Salida;
         $this->id_vehiculo = $this->salida->id_vehiculo;
         $this->id_chofer = $this->salida->id_chofer;
         $this->destino = $this->salida->destino;
         $this->kilometraje = $this->salida->kilometraje;
         $this->fecha = $this->salida->fecha;
-        $this->observaciones = $this->salida->observaciones;        
+        $this->observaciones = $this->salida->observaciones;
     }
 
     public function updated($input)
@@ -40,11 +46,11 @@ class Update extends Component
 
     public function update()
     {
-        if($this->getRules())
+        if ($this->getRules())
             $this->validate();
 
-        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Salida') ]) ]);
-        
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Salida')])]);
+
         $this->salida->update([
             'id_vehiculo' => $this->id_vehiculo,
             'id_chofer' => $this->id_chofer,
@@ -54,12 +60,13 @@ class Update extends Component
             'observaciones' => $this->observaciones,
             'user_id' => auth()->id(),
         ]);
+        return redirect()->to('admin/salida');
     }
 
     public function render()
     {
         return view('livewire.admin.salida.update', [
             'salida' => $this->salida
-        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Salida') ])]);
+        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Salida')])]);
     }
 }

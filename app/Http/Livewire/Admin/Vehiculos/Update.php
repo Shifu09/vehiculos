@@ -18,24 +18,25 @@ class Update extends Component
     public $color;
     public $age;
     public $serial;
-    
+
     protected $rules = [
         'codigo_auto' => 'required|unique:carros',
         'placa' => 'required|string',
         'marca' => 'required|string',
         'color' => 'required|string',
         'age' => 'required|numeric',
-        'serial' => 'required|string',        
+        'serial' => 'required|string',
     ];
 
-    public function mount(Vehiculos $Vehiculos){
+    public function mount(Vehiculos $Vehiculos)
+    {
         $this->vehiculos = $Vehiculos;
         $this->codigo_auto = $this->vehiculos->codigo_auto;
         $this->placa = $this->vehiculos->placa;
         $this->marca = $this->vehiculos->marca;
         $this->color = $this->vehiculos->color;
         $this->age = $this->vehiculos->age;
-        $this->serial = $this->vehiculos->serial;        
+        $this->serial = $this->vehiculos->serial;
     }
 
     public function updated($input)
@@ -45,11 +46,11 @@ class Update extends Component
 
     public function update()
     {
-        if($this->getRules())
+        if ($this->getRules())
             $this->validate();
 
-        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Vehiculos') ]) ]);
-        
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Vehiculos')])]);
+
         $this->vehiculos->update([
             'codigo_auto' => $this->codigo_auto,
             'placa' => $this->placa,
@@ -59,12 +60,13 @@ class Update extends Component
             'serial' => $this->serial,
             'user_id' => auth()->id(),
         ]);
+        return redirect()->to('admin/vehiculos');
     }
 
     public function render()
     {
         return view('livewire.admin.vehiculos.update', [
             'vehiculos' => $this->vehiculos
-        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Vehiculos') ])]);
+        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Vehiculos')])]);
     }
 }

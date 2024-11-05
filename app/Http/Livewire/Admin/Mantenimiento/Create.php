@@ -14,11 +14,11 @@ class Create extends Component
     public $tipo;
     public $fecha;
     public $observaciones;
-    
+
     protected $rules = [
         'id_vehiculo' => 'required',
         'tipo' => 'required',
-        'fecha' => 'required',        
+        'fecha' => 'required',
     ];
 
     public function updated($input)
@@ -28,11 +28,11 @@ class Create extends Component
 
     public function create()
     {
-        if($this->getRules())
+        if ($this->getRules())
             $this->validate();
 
-        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('Mantenimiento') ])]);
-        
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('Mantenimiento')])]);
+
         Mantenimiento::create([
             'id_vehiculo' => $this->id_vehiculo,
             'tipo' => $this->tipo,
@@ -40,13 +40,13 @@ class Create extends Component
             'observaciones' => $this->observaciones,
             'user_id' => auth()->id(),
         ]);
-
+        return redirect()->to('admin/mantenimiento');
         $this->reset();
     }
 
     public function render()
     {
         return view('livewire.admin.mantenimiento.create')
-            ->layout('admin::layouts.app', ['title' => __('CreateTitle', ['name' => __('Mantenimiento') ])]);
+            ->layout('admin::layouts.app', ['title' => __('CreateTitle', ['name' => __('Mantenimiento')])]);
     }
 }

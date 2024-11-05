@@ -65,7 +65,14 @@ class SalidaComponent implements CRUDComponent
     // It uses Laravel validation system
     public function validationRules()
     {
-        return [];
+        return [
+            'id_vehiculo' => 'required',
+            'id_chofer' => 'required',
+            'destino' => 'required',
+            'kilometraje' => 'required',
+            'fecha' => 'required',
+            'observaciones' => 'required',
+        ];
     }
 
     // Where files will store for inputs

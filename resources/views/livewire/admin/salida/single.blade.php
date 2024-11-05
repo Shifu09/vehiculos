@@ -2,7 +2,7 @@
     <td class="">{{ $salida->vehiculo->marca }}</td>
     <td class="">{{ $salida->chofer->nombre }}</td>
     <td class="">{{ $salida->destino }}</td>
-    <td class="">{{ $salida->kilometraje }}</td>
+    <td class="">{{ $salida->kilometraje . ' Km' }}</td>
     <td class="">{{ $salida->fecha }}</td>
     <td class="">{{ $salida->observaciones }}</td>
 

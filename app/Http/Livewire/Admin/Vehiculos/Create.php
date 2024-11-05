@@ -16,14 +16,14 @@ class Create extends Component
     public $color;
     public $age;
     public $serial;
-    
+
     protected $rules = [
         'codigo_auto' => 'required|unique:carros',
         'placa' => 'required|string',
         'marca' => 'required|string',
         'color' => 'required|string',
         'age' => 'required|numeric',
-        'serial' => 'required|string',        
+        'serial' => 'required|string',
     ];
 
     public function updated($input)
@@ -33,11 +33,11 @@ class Create extends Component
 
     public function create()
     {
-        if($this->getRules())
+        if ($this->getRules())
             $this->validate();
 
-        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('Vehiculos') ])]);
-        
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('Vehiculos')])]);
+
         Vehiculos::create([
             'codigo_auto' => $this->codigo_auto,
             'placa' => $this->placa,
@@ -47,13 +47,13 @@ class Create extends Component
             'serial' => $this->serial,
             'user_id' => auth()->id(),
         ]);
-
+        return redirect()->to('admin/vehiculos');
         $this->reset();
     }
 
     public function render()
     {
         return view('livewire.admin.vehiculos.create')
-            ->layout('admin::layouts.app', ['title' => __('CreateTitle', ['name' => __('Vehiculos') ])]);
+            ->layout('admin::layouts.app', ['title' => __('CreateTitle', ['name' => __('Vehiculos')])]);
     }
 }

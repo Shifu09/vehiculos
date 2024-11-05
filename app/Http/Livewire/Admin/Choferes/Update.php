@@ -15,18 +15,19 @@ class Update extends Component
     public $nombre;
     public $apellido;
     public $telefono;
-    
+
     protected $rules = [
         'nombre' => 'required|string',
         'apellido' => 'required|string',
-        'telefono' => 'required|numeric',        
+        'telefono' => 'required|numeric',
     ];
 
-    public function mount(Choferes $Choferes){
+    public function mount(Choferes $Choferes)
+    {
         $this->choferes = $Choferes;
         $this->nombre = $this->choferes->nombre;
         $this->apellido = $this->choferes->apellido;
-        $this->telefono = $this->choferes->telefono;        
+        $this->telefono = $this->choferes->telefono;
     }
 
     public function updated($input)
@@ -36,23 +37,24 @@ class Update extends Component
 
     public function update()
     {
-        if($this->getRules())
+        if ($this->getRules())
             $this->validate();
 
-        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Choferes') ]) ]);
-        
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Choferes')])]);
+
         $this->choferes->update([
             'nombre' => $this->nombre,
             'apellido' => $this->apellido,
             'telefono' => $this->telefono,
             'user_id' => auth()->id(),
         ]);
+        return redirect()->to('admin/choferes');
     }
 
     public function render()
     {
         return view('livewire.admin.choferes.update', [
             'choferes' => $this->choferes
-        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Choferes') ])]);
+        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Choferes')])]);
     }
 }
