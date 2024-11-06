@@ -1,7 +1,7 @@
 <tr x-data="{ modalIsOpen: false }">
     <td class="">{{ $choferes->nombre }}</td>
     <td class="">{{ $choferes->apellido }}</td>
-    <td class="">{{ '0' . $choferes->telefono }}</td>
+    <td class="">{{ $choferes->telefono }}</td>
 
     @if (getCrudConfig('Choferes')->delete or getCrudConfig('Choferes')->update)
         <td>
