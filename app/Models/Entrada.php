@@ -10,8 +10,8 @@ class Entrada extends Model
     use HasFactory;
 
     protected $fillable = [
-        'vehiculo_id',
-        'chofer_id',
+        'id_vehiculo',
+        'id_chofer',
         'fecha',
         'kilometraje',
         'observaciones',
@@ -19,11 +19,11 @@ class Entrada extends Model
 
     public function vehiculo()
     {
-        return $this->belongsTo(Vehiculos::class, 'vehiculo_id');
+        return $this->belongsTo(Vehiculos::class, 'id_vehiculo');
     }
 
     public function chofer()
     {
-        return $this->belongsTo(Choferes::class, 'chofer_id');
+        return $this->belongsTo(Choferes::class, 'id_chofer');
     }
 }

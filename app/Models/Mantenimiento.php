@@ -16,7 +16,10 @@ class Mantenimiento extends Model
         'fecha',
         'observaciones',
     ];
-
+    protected $casts = [
+        'tipo' => 'array',
+    ];
+    // TODO: Crear relacion con choferes
     public function vehiculo()
     {
         return $this->belongsTo(Vehiculos::class, 'id_vehiculo');

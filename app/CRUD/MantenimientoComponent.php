@@ -45,28 +45,31 @@ class MantenimientoComponent implements CRUDComponent
         foreach ($vehiculos as $vehiculo) {
             $vehiculosArray[$vehiculo->id] = $vehiculo->marca;
         }
+        $tiposMantenimiento = [
+            'Cambio de aceite' => 'Cambio de aceite',
+            'Cambio de batería' => 'Cambio de batería',
+            'Cambio de cauchos' => 'Cambio de cauchos',
+            'Cambio de filtro' => 'Cambio de filtro',
+            'Cambio de líquido refrigerante' => 'Cambio de líquido refrigerante',
+            'Cambio de neumáticos' => 'Cambio de neumáticos',
+            'Cambio de luces' => 'Cambio de luces',
+            'Inspección de correas' => 'Inspección de correas',
+            'Inspección del estado de mangueras' => 'Inspección del estado de mangueras',
+            'Revisión/cambio de bujías' => 'Revisión/cambio de bujías',
+            'Revisión/cambio de pastillas de freno' => 'Revisión/cambio de pastillas de freno',
+            'Revisión/cambio de los discos de freno' => 'Revisión/cambio de los discos de freno',
+            'Reparación de correas' => 'Reparación de correas',
+            'Revisión de frenos' => 'Revisión de frenos',
+            'Revisión de alternador' => 'Revisión de alternador',
+            'Revisión de la caja de cambios' => 'Revisión de la caja de cambios',
+            'Mantenimiento general' => 'Mantenimiento general',
+        ];
         return [
             'id_vehiculo' => ['select' => $vehiculosArray],
-
-            'tipo' => ['select' => [
-                'Cambio de aceite' => 'Cambio de aceite',
-                'Cambio de batería' => 'Cambio de batería',
-                'Cambio de cauchos' => 'Cambio de cauchos',
-                'Cambio de filtro' => 'Cambio de filtro',
-                'Cambio de líquido refrigerante' => 'Cambio de líquido refrigerante',
-                'Cambio de neumáticos' => 'Cambio de neumáticos',
-                'Cambio de luces' => 'Cambio de luces',
-                'Inspección de correas' => 'Inspección de correas',
-                'Inspección del estado de mangueras' => 'Inspección del estado de mangueras',
-                'Revisión/cambio de bujías' => 'Revisión/cambio de bujías',
-                'Revisión/cambio de pastillas de freno' => 'Revisión/cambio de pastillas de freno',
-                'Revisión/cambio de los discos de freno' => 'Revisión/cambio de los discos de freno',
-                'Reparación de correas' => 'Reparación de correas',
-                'Revisión de frenos' => 'Revisión de frenos',
-                'Revisión de alternador' => 'Revisión de alternador',
-                'Revisión de la caja de cambios' => 'Revisión de la caja de cambios',
-                'Mantenimiento general' => 'Mantenimiento general',
-            ]],
+            'tipo' => [
+                'type' => 'multiselect',
+                'options' => $tiposMantenimiento,
+            ],
             'fecha' => 'date',
             'observaciones' => 'text',
         ];
@@ -80,6 +83,7 @@ class MantenimientoComponent implements CRUDComponent
             'id_vehiculo' => 'required',
             'tipo' => 'required',
             'fecha' => 'required',
+            'observaciones' => '',
         ];
     }
 

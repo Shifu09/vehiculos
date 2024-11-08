@@ -1,6 +1,12 @@
 <tr x-data="{ modalIsOpen: false }">
     <td class="">{{ $mantenimiento->vehiculo->marca }}</td>
-    <td class="">{{ $mantenimiento->tipo }}</td>
+    <td class="">
+        @if (is_array($mantenimiento->tipo))
+            {{ implode(',  ', $mantenimiento->tipo) }}
+        @else
+            {{ $mantenimiento->tipo }}
+        @endif
+    </td>
     <td class="">{{ $mantenimiento->fecha }}</td>
     <td class="">{{ $mantenimiento->observaciones }}</td>
 
