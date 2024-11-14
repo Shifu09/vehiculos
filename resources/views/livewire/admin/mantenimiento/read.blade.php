@@ -1,3 +1,58 @@
+<style>
+    button {
+        font-size: 14px;
+        padding: 1em 2.7em;
+        font-weight: 500;
+        background: rgb(135, 113, 234);
+        color: white;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.6em;
+        cursor: pointer;
+    }
+
+    .gradient {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 0.6em;
+        margin-top: -0.25em;
+        background-image: linear-gradient(rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0.3));
+    }
+
+    .label {
+        position: relative;
+        top: -1px;
+    }
+
+    .transition {
+        transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        transition-duration: 500ms;
+        background-color: rgba(51, 14, 215, 0.434);
+
+        border-radius: 9999px;
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    button:hover .transition {
+        width: 17em;
+        height: 17em;
+    }
+
+    button:active {
+        transform: scale(0.97);
+    }
+</style>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -17,8 +72,12 @@
                     <div class="row justify-content-between mt-4 mb-4">
                         @if (getCrudConfig('Mantenimiento')->create && hasPermission(getRouteName() . '.mantenimiento.create', 1, 1))
                             <div class="col-md-4 right-0">
-                                <a style="border-radius: 15pxgi" href="@route(getRouteName() . '.mantenimiento.create')"
-                                    class="btn btn-success">{{ __('CreateTitle', ['name' => __('Mantenimiento')]) }}</a>
+                                <button>
+                                    <span class="transition"></span>
+                                    <span class="gradient"></span>
+                                    <a style="color: white"
+                                        href="@route(getRouteName() . '.mantenimiento.create')">{{ __('CreateTitle', ['name' => __('Mantenimiento')]) }}</a>
+                                </button>
                             </div>
                         @endif
                         @if (getCrudConfig('Mantenimiento')->searchable())
