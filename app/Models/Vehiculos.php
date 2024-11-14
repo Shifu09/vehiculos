@@ -13,6 +13,7 @@ class Vehiculos extends Model
         'codigo_auto',
         'placa',
         'marca',
+        'modelo',
         'color',
         'age',
         'serial',

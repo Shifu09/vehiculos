@@ -32,6 +32,12 @@
                 <input type='text' id='input-marca' wire:model.lazy='marca' class="form-control  @error('marca') is-invalid @enderror" placeholder='' autocomplete='on'>
                 @error('marca') <div class='invalid-feedback'>{{ $message }}</div> @enderror
             </div>
+            <!-- Modelo Input -->
+            <div class='form-group'>
+                <label for='input-modelo' class='col-sm-2 control-label '> {{ __('Modelo') }}</label>
+                <input type='text' id='input-modelo' wire:model.lazy='modelo' class="form-control  @error('modelo') is-invalid @enderror" placeholder='' autocomplete='on'>
+                @error('modelo') <div class='invalid-feedback'>{{ $message }}</div> @enderror
+            </div>
             <!-- Color Input -->
             <div class='form-group'>
                 <label for='input-color' class='col-sm-2 control-label '> {{ __('Color') }}</label>

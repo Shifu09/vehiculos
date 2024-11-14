@@ -15,14 +15,16 @@ class Update extends Component
     public $codigo_auto;
     public $placa;
     public $marca;
+    public $modelo;
     public $color;
     public $age;
     public $serial;
 
     protected $rules = [
-        'codigo_auto' => 'required|unique:carros',
+        // 'codigo_auto' => 'required|unique:carros',
         'placa' => 'required|string',
         'marca' => 'required|string',
+        'modelo' => 'required|string',
         'color' => 'required|string',
         'age' => 'required|numeric',
         'serial' => 'required|string',
@@ -34,6 +36,7 @@ class Update extends Component
         $this->codigo_auto = $this->vehiculos->codigo_auto;
         $this->placa = $this->vehiculos->placa;
         $this->marca = $this->vehiculos->marca;
+        $this->modelo = $this->vehiculos->modelo;
         $this->color = $this->vehiculos->color;
         $this->age = $this->vehiculos->age;
         $this->serial = $this->vehiculos->serial;
@@ -55,6 +58,7 @@ class Update extends Component
             'codigo_auto' => $this->codigo_auto,
             'placa' => $this->placa,
             'marca' => $this->marca,
+            'modelo' => $this->modelo,
             'color' => $this->color,
             'age' => $this->age,
             'serial' => $this->serial,

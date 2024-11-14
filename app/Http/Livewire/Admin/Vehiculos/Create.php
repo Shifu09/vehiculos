@@ -13,6 +13,7 @@ class Create extends Component
     public $codigo_auto;
     public $placa;
     public $marca;
+    public $modelo;
     public $color;
     public $age;
     public $serial;
@@ -21,6 +22,7 @@ class Create extends Component
         'codigo_auto' => 'required|unique:carros',
         'placa' => 'required|string',
         'marca' => 'required|string',
+        'modelo' => 'required|string',
         'color' => 'required|string',
         'age' => 'required|numeric',
         'serial' => 'required|string',
@@ -42,6 +44,7 @@ class Create extends Component
             'codigo_auto' => $this->codigo_auto,
             'placa' => $this->placa,
             'marca' => $this->marca,
+            'modelo' => $this->modelo,
             'color' => $this->color,
             'age' => $this->age,
             'serial' => $this->serial,
