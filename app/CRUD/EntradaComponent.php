@@ -68,7 +68,7 @@ class EntradaComponent implements CRUDComponent
         return [
             'id_vehiculo' => 'required',
             'id_chofer' => 'required',
-            'kilometraje' => 'required',
+            'kilometraje' => 'required|numeric',
             'fecha' => 'required',
             'observaciones' => 'required',
         ];

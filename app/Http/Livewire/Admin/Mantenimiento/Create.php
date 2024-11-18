@@ -20,7 +20,11 @@ class Create extends Component
         'tipo' => 'required',
         'fecha' => 'required',
     ];
-
+    protected $messages = [
+        'id_vehiculo.required' => 'El campo vehiculo es obligatorio.',
+        'tipo.required' => 'El campo tipo es obligatorio.',
+        'fecha.required' => 'El campo fecha es obligatorio.',
+    ];
     public function updated($input)
     {
         $this->validateOnly($input);

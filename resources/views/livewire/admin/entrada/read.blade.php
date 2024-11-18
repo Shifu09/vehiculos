@@ -1,3 +1,26 @@
+<style>
+    #button {
+        font-size: 14px;
+        padding: 1em 2.7em;
+        font-weight: 500;
+        background: rgb(135, 113, 234);
+        color: white;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.6em;
+        cursor: pointer;
+    }
+
+    #button:hover .transition {
+        width: 17em;
+        height: 17em;
+    }
+
+    #button:active {
+        transform: scale(0.97);
+    }
+</style>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -16,8 +39,8 @@
                     <div class="row justify-content-between mt-4 mb-4">
                         @if (getCrudConfig('Entrada')->create && hasPermission(getRouteName() . '.entradas.create', 1, 1))
                             <div class="col-md-4 right-0">
-                                <a href="@route(getRouteName() . '.entradas.create')"
-                                    class="btn btn-success">{{ __('CreateTitle', ['name' => __('Entrada')]) }}</a>
+                                <a id="button" style="color: white"
+                                    href="@route(getRouteName() . '.entradas.create')">{{ __('CreateTitle', ['name' => __('Entrada')]) }}</a>
                             </div>
                         @endif
                         @if (getCrudConfig('Entrada')->searchable())

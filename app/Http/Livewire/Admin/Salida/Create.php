@@ -23,9 +23,14 @@ class Create extends Component
         'destino' => 'required',
         'kilometraje' => 'required',
         'fecha' => 'required',
-        'observaciones' => 'required',
     ];
-
+    protected $messages = [
+        'id_vehiculo.required' => 'El campo vehiculo es obligatorio.',
+        'id_chofer.required' => 'El campo chofer es obligatorio.',
+        'destino.required' => 'El campo destino es obligatorio.',
+        'kilometraje.required' => 'El campo kilometraje es obligatorio.',
+        'fecha.required' => 'El campo fecha es obligatorio.',
+    ];
     public function updated($input)
     {
         $this->validateOnly($input);

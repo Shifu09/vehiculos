@@ -17,6 +17,7 @@ class Create extends Component
     public $color;
     public $age;
     public $serial;
+    public $estado;
 
     protected $rules = [
         'codigo_auto' => 'required|unique:carros',
@@ -28,7 +29,18 @@ class Create extends Component
         'serial' => 'required|string',
         'estado' => 'required|string',
     ];
-
+    protected $messages = [
+        'codigo_auto.unique' => 'El código del vehículo ya existe.',
+        'codigo_auto.required' => 'El código del vehículo es obligatorio.',
+        'placa.required' => 'La placa es obligatorio.',
+        'marca.required' => 'La marca es obligatorio.',
+        'modelo.required' => 'El modelo es obligatorio.',
+        'color.required' => 'El color es obligatorio.',
+        'age.required' => 'El año es obligatorio.',
+        'age.numeric' => 'El año debe ser un número.',
+        'serial.required' => 'El serial es obligatorio.',
+        'estado.required' => 'El estado es obligatorio.',
+    ];
     public function updated($input)
     {
         $this->validateOnly($input);
