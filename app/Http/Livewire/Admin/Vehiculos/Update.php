@@ -19,15 +19,17 @@ class Update extends Component
     public $color;
     public $age;
     public $serial;
+    public $estado;
 
     protected $rules = [
-        // 'codigo_auto' => 'required|unique:carros',
+        'codigo_auto' => 'required|unique:carros',
         'placa' => 'required|string',
         'marca' => 'required|string',
         'modelo' => 'required|string',
         'color' => 'required|string',
         'age' => 'required|numeric',
         'serial' => 'required|string',
+        'estado' => 'required|string',
     ];
 
     public function mount(Vehiculos $Vehiculos)
@@ -40,6 +42,7 @@ class Update extends Component
         $this->color = $this->vehiculos->color;
         $this->age = $this->vehiculos->age;
         $this->serial = $this->vehiculos->serial;
+        $this->estado = $this->vehiculos->estado;
     }
 
     public function updated($input)
@@ -62,6 +65,7 @@ class Update extends Component
             'color' => $this->color,
             'age' => $this->age,
             'serial' => $this->serial,
+            'estado' => $this->estado,
             'user_id' => auth()->id(),
         ]);
         return redirect()->to('admin/vehiculos');

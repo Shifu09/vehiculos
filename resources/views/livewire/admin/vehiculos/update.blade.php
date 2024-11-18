@@ -56,6 +56,16 @@
                 <input type='text' id='input-serial' wire:model.lazy='serial' class="form-control  @error('serial') is-invalid @enderror" placeholder='' autocomplete='on'>
                 @error('serial') <div class='invalid-feedback'>{{ $message }}</div> @enderror
             </div>
+            <!-- Estado Input -->
+            <div class='form-group'>
+                <label for='input-estado' class='col-sm-2 control-label '> {{ __('Estado') }}</label>
+                <select id='input-estado' wire:model.lazy='estado' class="form-control  @error('estado') is-invalid @enderror">
+                    @foreach(getCrudConfig('Vehiculos')->inputs()['estado']['select'] as $key => $value)
+                        <option value='{{ $key }}'>{{ $value }}</option>
+                    @endforeach
+                </select>
+                @error('estado') <div class='invalid-feedback'>{{ $message }}</div> @enderror
+            </div>
 
 
         </div>

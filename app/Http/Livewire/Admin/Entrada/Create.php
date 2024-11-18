@@ -15,13 +15,13 @@ class Create extends Component
     public $kilometraje;
     public $fecha;
     public $observaciones;
-    
+
     protected $rules = [
         'id_vehiculo' => 'required',
         'id_chofer' => 'required',
         'kilometraje' => 'required',
         'fecha' => 'required',
-        'observaciones' => 'required',        
+        'observaciones' => 'required',
     ];
 
     public function updated($input)
@@ -31,11 +31,11 @@ class Create extends Component
 
     public function create()
     {
-        if($this->getRules())
+        if ($this->getRules())
             $this->validate();
 
-        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('Entrada') ])]);
-        
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('Entrada')])]);
+
         Entrada::create([
             'id_vehiculo' => $this->id_vehiculo,
             'id_chofer' => $this->id_chofer,
@@ -45,12 +45,13 @@ class Create extends Component
             'user_id' => auth()->id(),
         ]);
 
+        return redirect()->to('admin/entradas');
         $this->reset();
     }
 
     public function render()
     {
         return view('livewire.admin.entrada.create')
-            ->layout('admin::layouts.app', ['title' => __('CreateTitle', ['name' => __('Entrada') ])]);
+            ->layout('admin::layouts.app', ['title' => __('CreateTitle', ['name' => __('Entrada')])]);
     }
 }

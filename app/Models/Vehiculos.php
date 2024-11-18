@@ -17,6 +17,7 @@ class Vehiculos extends Model
         'color',
         'age',
         'serial',
+        'estado',
     ];
     public function salida()
     {

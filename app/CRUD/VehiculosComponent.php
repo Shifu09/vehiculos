@@ -26,13 +26,13 @@ class VehiculosComponent implements CRUDComponent
     // which kind of data should be showed in list page
     public function fields()
     {
-        return ['codigo_auto', 'placa', 'marca', 'modelo', 'color', 'age', 'serial'];
+        return ['codigo_auto', 'placa', 'marca', 'modelo', 'color', 'age', 'serial', 'estado'];
     }
 
     // Searchable fields, if you dont want search feature, remove it
     public function searchable()
     {
-        return ['codigo_auto', 'placa', 'marca', 'modelo', 'color', 'age', 'serial'];
+        return ['codigo_auto', 'placa', 'marca', 'modelo', 'color', 'age', 'serial', 'estado'];
     }
 
     // Write every fields in your db which you want to have a input
@@ -40,6 +40,7 @@ class VehiculosComponent implements CRUDComponent
     // "password", "number", "email", "select", "date", "datetime", "time"
     public function inputs()
     {
+
         return [
             'codigo_auto' => 'text',
             'placa' => 'text',
@@ -48,6 +49,12 @@ class VehiculosComponent implements CRUDComponent
             'color' => 'text',
             'age' => 'text',
             'serial' => 'text',
+            'estado' => [
+                'select' => [
+                    'Operativo' => 'Operativo',
+                    'No Operativo' => 'No Operativo',
+                ],
+            ]
         ];
     }
 
@@ -63,6 +70,7 @@ class VehiculosComponent implements CRUDComponent
             'color' => 'required|string',
             'age' => 'required|numeric',
             'serial' => 'required|string',
+            'estado' => 'required|string',
         ];
     }
 

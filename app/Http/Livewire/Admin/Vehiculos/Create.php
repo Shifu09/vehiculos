@@ -26,6 +26,7 @@ class Create extends Component
         'color' => 'required|string',
         'age' => 'required|numeric',
         'serial' => 'required|string',
+        'estado' => 'required|string',
     ];
 
     public function updated($input)

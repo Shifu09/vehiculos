@@ -17,22 +17,23 @@ class Update extends Component
     public $kilometraje;
     public $fecha;
     public $observaciones;
-    
+
     protected $rules = [
         'id_vehiculo' => 'required',
         'id_chofer' => 'required',
         'kilometraje' => 'required',
         'fecha' => 'required',
-        'observaciones' => 'required',        
+        'observaciones' => 'required',
     ];
 
-    public function mount(Entrada $Entrada){
+    public function mount(Entrada $Entrada)
+    {
         $this->entrada = $Entrada;
         $this->id_vehiculo = $this->entrada->id_vehiculo;
         $this->id_chofer = $this->entrada->id_chofer;
         $this->kilometraje = $this->entrada->kilometraje;
         $this->fecha = $this->entrada->fecha;
-        $this->observaciones = $this->entrada->observaciones;        
+        $this->observaciones = $this->entrada->observaciones;
     }
 
     public function updated($input)
@@ -42,11 +43,11 @@ class Update extends Component
 
     public function update()
     {
-        if($this->getRules())
+        if ($this->getRules())
             $this->validate();
 
-        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Entrada') ]) ]);
-        
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Entrada')])]);
+
         $this->entrada->update([
             'id_vehiculo' => $this->id_vehiculo,
             'id_chofer' => $this->id_chofer,
@@ -55,12 +56,13 @@ class Update extends Component
             'observaciones' => $this->observaciones,
             'user_id' => auth()->id(),
         ]);
+        return redirect()->to('admin/entradas');
     }
 
     public function render()
     {
         return view('livewire.admin.entrada.update', [
             'entrada' => $this->entrada
-        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Entrada') ])]);
+        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Entrada')])]);
     }
 }

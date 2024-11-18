@@ -6,6 +6,7 @@
     <td class="">{{ $vehiculos->color }}</td>
     <td class="">{{ $vehiculos->age }}</td>
     <td class="">{{ $vehiculos->serial }}</td>
+    <td class="{{ $vehiculos->estado == 'Operativo' ? 'text-success' : 'text-danger' }}">{{ $vehiculos->estado }}</td>
 
     @if (getCrudConfig('Vehiculos')->delete or getCrudConfig('Vehiculos')->update)
         <td>
