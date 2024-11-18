@@ -22,7 +22,8 @@ class Read extends Component
     public $sortType;
     public $sortColumn;
 
-    public function salidaDeleted(){
+    public function salidaDeleted()
+    {
         // Nothing ..
     }
 
@@ -39,11 +40,11 @@ class Read extends Component
         $data = Salida::query();
 
         $instance = getCrudConfig('salida');
-        if($instance->searchable()){
+        if ($instance->searchable()) {
             $array = (array) $instance->searchable();
-            $data->where(function (Builder $query) use ($array){
+            $data->where(function (Builder $query) use ($array) {
                 foreach ($array as $item) {
-                    if(!\Str::contains($item, '.')) {
+                    if (!\Str::contains($item, '.')) {
                         $query->orWhere($item, 'like', '%' . $this->search . '%');
                     } else {
                         $array = explode('.', $item);
@@ -55,7 +56,7 @@ class Read extends Component
             });
         }
 
-        if($this->sortColumn) {
+        if ($this->sortColumn) {
             $data->orderBy($this->sortColumn, $this->sortType);
         } else {
             $data->latest('id');
@@ -63,8 +64,9 @@ class Read extends Component
 
         $data = $data->paginate(config('easy_panel.pagination_count', 15));
 
+
         return view('livewire.admin.salida.read', [
             'salidas' => $data
-        ])->layout('admin::layouts.app', ['title' => __(\Str::plural('Salida')) ]);
+        ])->layout('admin::layouts.app', ['title' => __(\Str::plural('Salida'))]);
     }
 }

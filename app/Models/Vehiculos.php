@@ -18,6 +18,10 @@ class Vehiculos extends Model
         'age',
         'serial',
     ];
+    public function salida()
+    {
+        return $this->hasMany(Salida::class, 'codigo_auto');
+    }
     public function mantenimiento()
     {
         return $this->belongsTo(Mantenimiento::class, 'codigo_auto');

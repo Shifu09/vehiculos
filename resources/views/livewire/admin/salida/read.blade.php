@@ -18,6 +18,7 @@
                             <div class="col-md-4 right-0">
                                 <a href="@route(getRouteName() . '.salida.create')"
                                     class="btn btn-success">{{ __('CreateTitle', ['name' => __('Salida')]) }}</a>
+
                             </div>
                         @endif
                         @if (getCrudConfig('Salida')->searchable())

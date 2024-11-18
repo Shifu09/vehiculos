@@ -67,7 +67,7 @@ class MantenimientoComponent implements CRUDComponent
         return [
             'id_vehiculo' => ['select' => $vehiculosArray],
             'tipo' => [
-                'type' => 'multiselect',
+                'type' => 'select',
                 'options' => $tiposMantenimiento,
             ],
             'fecha' => 'date',

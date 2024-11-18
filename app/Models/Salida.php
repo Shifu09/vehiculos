@@ -9,6 +9,7 @@ class Salida extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id';
     protected $table = 'salidas';
     protected $fillable = [
         'id_vehiculo',
