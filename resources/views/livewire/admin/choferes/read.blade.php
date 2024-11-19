@@ -80,7 +80,8 @@
         font-size: 14px;
         padding: 1em 2.7em;
         font-weight: 500;
-        background: rgb(135, 113, 234);
+        background: linear-gradient(90deg, rgba(135, 113, 234, 1) 0%, rgba(125, 114, 234, 1) 19%,
+                rgba(120, 119, 241, 1) 44%, rgba(110, 117, 233, 1) 64%, rgba(99, 118, 232, 1) 86%, rgba(2, 0, 36, 1) 135%);
         color: white;
         border: none;
         position: relative;

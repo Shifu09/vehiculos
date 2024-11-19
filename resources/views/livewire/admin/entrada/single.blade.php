@@ -2,7 +2,7 @@
     <td class="">{{ $entrada->vehiculo->marca }}</td>
     <td class="">{{ $entrada->chofer->nombre }}</td>
     <td class="">{{ $entrada->fecha }}</td>
-    <td class="">{{ $entrada->kilometraje }}</td>
+    <td class="">{{ $entrada->kilometraje . ' Km' }}</td>
     <td class="">{{ $entrada->observaciones }}</td>
 
     @if (getCrudConfig('Entrada')->delete or getCrudConfig('Entrada')->update)
