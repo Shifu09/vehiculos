@@ -33,7 +33,7 @@ class EntradaComponent implements CRUDComponent
     // Searchable fields, if you dont want search feature, remove it
     public function searchable()
     {
-        return ['id_vehiculo', 'id_chofer', 'fecha', 'kilometraje'];
+        return ['vehiculo.marca', 'chofer.nombre', 'fecha', 'kilometraje'];
     }
 
     // Write every fields in your db which you want to have a input

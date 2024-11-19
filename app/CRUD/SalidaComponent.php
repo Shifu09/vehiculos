@@ -33,7 +33,7 @@ class SalidaComponent implements CRUDComponent
     // Searchable fields, if you dont want search feature, remove it
     public function searchable()
     {
-        return ['destino', 'kilometraje', 'fecha', 'id_vehiculo', 'id_chofer'];
+        return ['destino', 'kilometraje', 'fecha', 'vehiculo.marca', 'chofer.nombre'];
     }
 
     // Write every fields in your db which you want to have a input

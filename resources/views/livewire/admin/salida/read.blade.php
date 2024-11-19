@@ -1,26 +1,3 @@
-<style>
-    #button {
-        font-size: 14px;
-        padding: 1em 2.7em;
-        font-weight: 500;
-        background: rgb(135, 113, 234);
-        color: white;
-        border: none;
-        position: relative;
-        overflow: hidden;
-        border-radius: 0.6em;
-        cursor: pointer;
-    }
-
-    #button:hover .transition {
-        width: 17em;
-        height: 17em;
-    }
-
-    #button:active {
-        transform: scale(0.97);
-    }
-</style>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -108,3 +85,26 @@
         </div>
     </div>
 </div>
+<style>
+    #button {
+        font-size: 14px;
+        padding: 1em 2.7em;
+        font-weight: 500;
+        background: rgb(135, 113, 234);
+        color: white;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.6em;
+        cursor: pointer;
+    }
+
+    #button:hover .transition {
+        width: 17em;
+        height: 17em;
+    }
+
+    #button:active {
+        transform: scale(0.97);
+    }
+</style>

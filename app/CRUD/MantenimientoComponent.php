@@ -32,7 +32,7 @@ class MantenimientoComponent implements CRUDComponent
     // Searchable fields, if you dont want search feature, remove it
     public function searchable()
     {
-        return ['id_vehiculo', 'tipo', 'fecha', 'observaciones'];
+        return ['vehiculo.marca', 'tipo', 'fecha', 'observaciones'];
     }
 
     // Write every fields in your db which you want to have a input

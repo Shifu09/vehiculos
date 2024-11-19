@@ -1,26 +1,3 @@
-<style>
-    #button {
-        font-size: 14px;
-        padding: 1em 2.7em;
-        font-weight: 500;
-        background: rgb(135, 113, 234);
-        color: white;
-        border: none;
-        position: relative;
-        overflow: hidden;
-        border-radius: 0.6em;
-        cursor: pointer;
-    }
-
-    #button:hover .transition {
-        width: 17em;
-        height: 17em;
-    }
-
-    #button:active {
-        transform: scale(0.97);
-    }
-</style>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -39,7 +16,7 @@
                     <div class="row justify-content-between mt-4 mb-4">
                         @if (getCrudConfig('Vehiculos')->create && hasPermission(getRouteName() . '.vehiculos.create', 1, 1))
                             <div class="col-md-4 right-0">
-                                <a id="button" style="color: white"
+                                <a id="boton" style="color: white"
                                     href="@route(getRouteName() . '.vehiculos.create')">{{ __('CreateTitle', ['name' => __('Vehiculos')]) }}</a>
                             </div>
                         @endif
@@ -113,3 +90,17 @@
         </div>
     </div>
 </div>
+<style>
+    #boton {
+        font-size: 14px;
+        padding: 1em 2.7em;
+        font-weight: 500;
+        background: rgb(135, 113, 234);
+        color: white;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.6em;
+        cursor: pointer;
+    }
+</style>
