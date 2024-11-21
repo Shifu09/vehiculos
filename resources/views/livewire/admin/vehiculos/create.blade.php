@@ -19,7 +19,8 @@
             <div class='form-group'>
                 <label for='input-codigo_auto' class='col-sm-2 control-label '> {{ __('Codigo_auto') }}</label>
                 <input type='text' id='input-codigo_auto' wire:model.lazy='codigo_auto'
-                    class="form-control  @error('codigo_auto') is-invalid @enderror" placeholder='' autocomplete='on'>
+                    class="form-control  @error('codigo_auto') is-invalid @enderror" placeholder='' autocomplete='on'
+                    maxlength="9">
                 @error('codigo_auto')
                     <div class='invalid-feedback'>{{ $message }}</div>
                 @enderror

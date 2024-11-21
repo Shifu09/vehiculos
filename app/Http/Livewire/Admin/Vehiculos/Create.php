@@ -61,6 +61,8 @@ class Create extends Component
             'color' => $this->color,
             'age' => $this->age,
             'serial' => $this->serial,
+            'estado' => $this->estado,
+
             'user_id' => auth()->id(),
         ]);
         return redirect()->to('admin/vehiculos');

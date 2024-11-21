@@ -25,7 +25,6 @@ class Update extends Component
         'destino' => 'required',
         'kilometraje' => 'required',
         'fecha' => 'required',
-        'observaciones' => 'required',
     ];
 
     public function mount(Salida $Salida)
