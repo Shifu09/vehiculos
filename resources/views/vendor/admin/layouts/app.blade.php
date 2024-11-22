@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="{{ asset('img/logo.ico') }}" />
     <title>{{ __('EasyPanel') }} - {{ $title ?? __('Home') }}</title>
 
     {{-- Scripts which must load before full loading --}}
