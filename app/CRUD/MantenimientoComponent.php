@@ -65,10 +65,9 @@ class MantenimientoComponent implements CRUDComponent
             'Mantenimiento general' => 'Mantenimiento general',
         ];
         return [
-            'id_vehiculo' => ['select' => $vehiculosArray],
+            'id_vehiculo' => ['select' => Vehiculos::where('estado', 'Operativo')->pluck('marca', 'id')->toArray()],
             'tipo' => [
-                'type' => 'select',
-                'options' => $tiposMantenimiento,
+                'select' => $tiposMantenimiento,
             ],
             'fecha' => 'date',
             'observaciones' => 'text',

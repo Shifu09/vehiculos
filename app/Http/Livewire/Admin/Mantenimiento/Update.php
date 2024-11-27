@@ -21,6 +21,7 @@ class Update extends Component
         'id_vehiculo' => 'required',
         'tipo' => 'required',
         'fecha' => 'required',
+        'observaciones' => '',
     ];
 
     public function mount(Mantenimiento $Mantenimiento)
@@ -51,8 +52,6 @@ class Update extends Component
             'observaciones' => $this->observaciones,
             'user_id' => auth()->id(),
         ]);
-
-        return redirect()->to('admin/mantenimiento');
     }
 
     public function render()

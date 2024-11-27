@@ -22,7 +22,7 @@ class Create extends Component
     protected $messages = [
 
         'nombre.required' => 'El campo nombre es obligatorio.',
-        'nombre.text' => 'El campo nombre debe ser una cadena de texto.',
+        'nombre.string' => 'El campo nombre debe ser una cadena de texto.',
         'apellido.required' => 'El campo apellido es obligatorio.',
         'telefono.required' => 'El campo telefono es obligatorio.',
         'telefono.numeric' => 'El campo telefono debe ser un número.',

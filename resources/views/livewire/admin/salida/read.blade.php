@@ -48,6 +48,9 @@
                             <th scope="col" style='cursor: pointer' wire:click="sort('id_vehiculo')"> <i
                                     class='fa @if ($sortType == 'desc' and $sortColumn == 'id_vehiculo') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'id_vehiculo') fa-sort-amount-up ml-2 @endif'></i>
                                 {{ __('Vehiculo') }} </th>
+                            <th scope="col" style='cursor: pointer' wire:click="sort('marca')"> <i
+                                    class='fa @if ($sortType == 'desc' and $sortColumn == 'modelo') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'modelo') fa-sort-amount-up ml-2 @endif'></i>
+                                {{ __('Modelo') }} </th>
                             <th scope="col" style='cursor: pointer' wire:click="sort('id_chofer')"> <i
                                     class='fa @if ($sortType == 'desc' and $sortColumn == 'id_chofer') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'id_chofer') fa-sort-amount-up ml-2 @endif'></i>
                                 {{ __('Chofer') }} </th>
