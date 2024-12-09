@@ -10,7 +10,7 @@
         <td>
 
             @if (getCrudConfig('Entrada')->update && hasPermission(getRouteName() . '.entradas.update', 1, 1, $entrada))
-                <a href="@route(getRouteName() . '.entradas.update', $entrada->id)" class="btn text-primary mt-1">
+                <a href="@route(getRouteName() . '.entrada.update', $entrada->id)" class="btn text-primary mt-1">
                     <i class="icon-pencil"></i>
                 </a>
             @endif

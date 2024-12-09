@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('id_chofer')->foreign('id_chofer')->references('id')->on('choferes');
             $table->integer('kilometraje');
             $table->dateTime('fecha');
-            $table->string('observaciones');
+            $table->string('observaciones')->nullable();
             $table->timestamps();
         });
     }

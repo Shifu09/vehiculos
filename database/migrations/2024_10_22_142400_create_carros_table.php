@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('codigo_auto');
             $table->text('placa');
             $table->text('marca');
+            $table->text('modelo');
             $table->text('color');
             $table->integer('age');
             $table->text('serial');

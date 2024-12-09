@@ -17,7 +17,7 @@
                         @if (getCrudConfig('Entrada')->create && hasPermission(getRouteName() . '.entradas.create', 1, 1))
                             <div class="col-md-4 right-0">
                                 <a id="button" style="color: white"
-                                    href="@route(getRouteName() . '.entradas.create')">{{ __('CreateTitle', ['name' => __('Entrada')]) }}</a>
+                                    href="@route(getRouteName() . '.entrada.create')">{{ __('CreateTitle', ['name' => __('Entrada')]) }}</a>
                             </div>
                         @endif
                         @if (getCrudConfig('Entrada')->searchable())

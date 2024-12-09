@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('destino');
             $table->string('kilometraje');
             $table->date('fecha');
-            $table->string('observaciones');
+            $table->string('observaciones')->nullable();
             $table->timestamps();
         });
     }

@@ -28,7 +28,7 @@ return [
     'lang_manager_class' => \EasyPanel\Services\LangService::class,
 
     // it's a place where a user if not authenticated will be redirected
-    'redirect_unauthorized' => 'login',
+    'redirect_unauthorized' => '/',
 
     // Admin panel routes prefix
     'route_prefix' => 'admin', //  http://localhost/admin
