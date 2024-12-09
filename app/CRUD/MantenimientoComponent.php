@@ -50,6 +50,8 @@ class MantenimientoComponent implements CRUDComponent
             'Cambio de batería' => 'Cambio de batería',
             'Cambio de cauchos' => 'Cambio de cauchos',
             'Cambio de filtro' => 'Cambio de filtro',
+            'Cambio de pastilla' => 'Cambio de pastilla',
+            'Cambio de tambor' => 'Cambio de tambor',
             'Cambio de líquido refrigerante' => 'Cambio de líquido refrigerante',
             'Cambio de neumáticos' => 'Cambio de neumáticos',
             'Cambio de luces' => 'Cambio de luces',
@@ -63,6 +65,7 @@ class MantenimientoComponent implements CRUDComponent
             'Revisión de alternador' => 'Revisión de alternador',
             'Revisión de la caja de cambios' => 'Revisión de la caja de cambios',
             'Mantenimiento general' => 'Mantenimiento general',
+            'Otros' => 'Otros',
         ];
         return [
             'id_vehiculo' => ['select' => Vehiculos::where('estado', 'Operativo')->pluck('marca', 'id')->toArray()],
