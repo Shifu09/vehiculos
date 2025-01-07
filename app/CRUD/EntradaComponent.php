@@ -45,7 +45,7 @@ class EntradaComponent implements CRUDComponent
         $choferesArray = [];
         $choferes = Choferes::all();
         foreach ($choferes as $chofer) {
-            $choferesArray[$chofer->id] = $chofer->nombre;
+            $choferesArray[$chofer->id] = $chofer->nombre.' '.$chofer->apellido;
         }
         return [
             'id_vehiculo' => ['select' => Vehiculos::where('estado', 'Operativo')->pluck('marca', 'id')->toArray()],

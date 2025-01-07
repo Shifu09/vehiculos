@@ -1,5 +1,6 @@
 <tr x-data="{ modalIsOpen: false }">
     <td class="">{{ $mantenimiento->vehiculo->marca }}</td>
+    <td class=""> {{ $mantenimiento->vehiculo->placa }}</td>
     <td class="">
         @if (is_array($mantenimiento->tipo))
             {{ implode(',  ', $mantenimiento->tipo) }}

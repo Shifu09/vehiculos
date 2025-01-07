@@ -23,7 +23,6 @@ class Create extends Component
         'fecha' => 'required',
     ];
     protected $messages = [
-
         'id_vehiculo.required' => 'El campo Vehiculo es obligatorio',
         'id_chofer.required' => 'El campo Chofer es obligatorio',
         'kilometraje.required' => 'El campo Kilometraje es obligatorio',
