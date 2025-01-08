@@ -48,7 +48,14 @@ class EntradaComponent implements CRUDComponent
             $choferesArray[$chofer->id] = $chofer->nombre.' '.$chofer->apellido;
         }
         return [
-            'id_vehiculo' => ['select' => Vehiculos::where('estado', 'Operativo')->pluck('marca', 'id')->toArray()],
+        'id_vehiculo' =>
+        ['select' => Vehiculos::where('estado', 'Operativo')
+        ->get()
+        ->mapWithKeys(function ($vehiculo) {
+            return [$vehiculo->id => $vehiculo->marca . ' - ' . $vehiculo->placa];
+        })
+        ->toArray()
+        ],
             'id_chofer' => ['select' => $choferesArray],
             'kilometraje' => 'text',
             'fecha' => 'datetime',

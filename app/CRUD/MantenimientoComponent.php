@@ -68,7 +68,14 @@ class MantenimientoComponent implements CRUDComponent
             'Otros' => 'Otros',
         ];
         return [
-            'id_vehiculo' => ['select' => Vehiculos::where('estado', 'Operativo')->pluck('marca', 'id')->toArray()],
+            'id_vehiculo' =>
+        ['select' => Vehiculos::where('estado', 'Operativo')
+        ->get()
+        ->mapWithKeys(function ($vehiculo) {
+            return [$vehiculo->id => $vehiculo->marca . ' - ' . $vehiculo->placa];
+        })
+        ->toArray()
+        ],
             'tipo' => [
                 'select' => $tiposMantenimiento,
             ],
