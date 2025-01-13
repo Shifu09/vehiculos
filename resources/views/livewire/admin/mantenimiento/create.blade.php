@@ -33,7 +33,7 @@
             <div class='form-group'>
                 <label for='input-tipo' class='col-sm-2 control-label '> {{ __('Tipo de Mantenimiento') }}</label>
                 <select id='input-tipo' wire:model.lazy='tipo' multiple
-                    class="form-control  @error('tipo') is-invalid @enderror">
+                    class="form-control  @error('tipo') is-invalid @enderror" style="height:300px;">
                     @foreach (getCrudConfig('Mantenimiento')->inputs()['tipo']['select'] as $value)
                         <option value='{{ $value }}'>{{ $value }}</option>
                     @endforeach

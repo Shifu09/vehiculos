@@ -1,6 +1,6 @@
 <tr x-data="{ modalIsOpen: false }">
     <td class="">{{ $entrada->vehiculo->marca }}</td>
-    <td class="">{{ $entrada->vehiculo->modelo }}</td>
+    <td class="">{{ $entrada->vehiculo->placa }}</td>
     <td class="">{{ $entrada->chofer->nombre }}</td>
     <td class="">{{ $entrada->fecha }}</td>
     <td class="">{{ $entrada->kilometraje . ' Km' }}</td>
