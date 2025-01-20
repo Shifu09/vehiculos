@@ -20,7 +20,7 @@ class Create extends Component
     public $estado;
 
     protected $rules = [
-        'codigo_auto' => 'required|unique:carros',
+        'codigo_auto' => 'required|unique:carros|numeric',
         'placa' => 'required|string',
         'marca' => 'required|string',
         'modelo' => 'required|string',
@@ -32,6 +32,7 @@ class Create extends Component
     protected $messages = [
         'codigo_auto.unique' => 'El código del vehículo ya existe.',
         'codigo_auto.required' => 'El código del vehículo es obligatorio.',
+        'codigo_auto.numeric' => 'El código del vehículo debe ser un número.',
         'marca.string' => 'La marca debe ser una cadena de texto.',
         'marca.required' => 'La marca es obligatorio.',
         'placa.required' => 'La placa es obligatorio.',
