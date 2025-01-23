@@ -7,6 +7,9 @@
     <td class="">{{ $vehiculos->age }}</td>
     <td class="">{{ $vehiculos->serial }}</td>
     <td class="{{ $vehiculos->estado == 'Operativo' ? 'text-success' : 'text-danger' }}">{{ $vehiculos->estado }}</td>
+    <td>
+        <a href="{{ route('admin.vehiculos.maintenance', $vehiculos->id) }}" class="btn btn-success">Mantenimiento</a>
+    </td> 
 
     @if (getCrudConfig('Vehiculos')->delete or getCrudConfig('Vehiculos')->update)
         <td>

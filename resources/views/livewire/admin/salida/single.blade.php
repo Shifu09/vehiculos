@@ -6,9 +6,9 @@
     <td class="">{{ $salida->kilometraje . ' Km' }}</td>
     <td class="">{{ $salida->fecha }}</td>
     <td class="">{{ $salida->observaciones }}</td>
-    {{-- <td>
-        <a href="{{ route('salida.pdf', $salida->id) }}" class="btn btn-success">PDF</a>
-    </td> --}}
+    <td>
+        <a href="{{ route('admin.salida.print', $salida->id) }}" class="btn btn-success">PDF</a>
+    </td> 
 
     @if (getCrudConfig('Salida')->delete or getCrudConfig('Salida')->update)
         <td>

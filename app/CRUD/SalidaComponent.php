@@ -82,4 +82,21 @@ class SalidaComponent implements CRUDComponent
     {
         return [];
     }
+
+    // Custom actions
+    public $hasCustomActions = true;
+
+    public function customActions()
+    {
+        return [
+                'print' => [
+                'label' => 'Imprimir',
+                'icon' => 'printer',
+                'class' => 'bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded',
+                'action' => function($model) {
+                    return redirect()->route('admin.salida.print', $model->id);
+                }
+            ]
+        ];
+    }
 }
