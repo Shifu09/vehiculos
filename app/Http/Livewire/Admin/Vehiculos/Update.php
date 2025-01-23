@@ -22,7 +22,7 @@ class Update extends Component
     public $estado;
 
     protected $rules = [
-        'codigo_auto' => 'required',
+        'codigo_auto' => 'required|unique:carros|numeric',
         'placa' => 'required|string',
         'marca' => 'required|string',
         'modelo' => 'required|string',
@@ -31,7 +31,22 @@ class Update extends Component
         'serial' => 'required|string',
         'estado' => 'required|string',
     ];
-
+    protected $messages = [
+        'codigo_auto.unique' => 'El código del vehículo ya existe.',
+        'codigo_auto.required' => 'El código del vehículo es obligatorio.',
+        'codigo_auto.numeric' => 'El código del vehículo debe ser un número.',
+        'marca.string' => 'La marca debe ser una cadena de texto.',
+        'marca.required' => 'La marca es obligatorio.',
+        'placa.required' => 'La placa es obligatorio.',
+        'modelo.required' => 'El modelo es obligatorio.',
+        'modelo.string' => 'El modelo debe ser una cadena de texto.',
+        'color.required' => 'El color es obligatorio.',
+        'color.string' => 'El color debe ser una cadena de texto.',
+        'age.required' => 'El año es obligatorio.',
+        'age.numeric' => 'El año debe ser un número.',
+        'serial.required' => 'El serial es obligatorio.',
+        'estado.required' => 'El estado es obligatorio.',
+    ];
     public function mount(Vehiculos $Vehiculos)
     {
         $this->vehiculos = $Vehiculos;

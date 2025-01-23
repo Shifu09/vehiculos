@@ -23,6 +23,12 @@ class Update extends Component
         'fecha' => 'required',
         'observaciones' => '',
     ];
+    protected $messages = [
+        'id_vehiculo.required' => 'El campo vehículo es obligatorio.',
+        'tipo.required' => 'El campo tipo es obligatorio.',
+        'fecha.required' => 'El campo fecha es obligatorio.',
+        'observaciones' => 'El campo observaciones es opcional.',
+    ];
 
     public function mount(Mantenimiento $Mantenimiento)
     {
@@ -52,6 +58,7 @@ class Update extends Component
             'observaciones' => $this->observaciones,
             'user_id' => auth()->id(),
         ]);
+        return redirect()->to('admin/mantenimiento');
     }
 
     public function render()

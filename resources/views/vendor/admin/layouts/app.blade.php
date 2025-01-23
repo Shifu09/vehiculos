@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="{{ asset('img/logo.ico') }}" />
-    <title>{{ __('EasyPanel') }} - {{ $title ?? __('Home') }}</title>
+    <title>{{ __('Aguas de Merida') }} - {{ $title ?? __('Inicio') }}</title>
 
     {{-- Scripts which must load before full loading --}}
     @style('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
@@ -50,7 +50,7 @@
                     <!-- Logo -->
                     <div class="navbar-brand">
                         <a href="@route(getRouteName() . '.home')">
-                            <span class="logo-text">{{ __('EasyPanel') }}</span>
+                            <span class="logo-text">{{ __('Aguas de Merida') }}</span>
                             <img src=" {{ asset('../img/aguamerca_logo.png') }}" alt="" srcset=""
                                 style="width: 28px; box-shadow: 0px 0px 27px 0px #504f4f; border-radius: 20px">
 
@@ -97,7 +97,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <span class="ml-2 d-none d-lg-inline-block"><span>{{ __('Hello') }},</span> <span
+                                <span class="ml-2 d-none d-lg-inline-block"><span>{{ __('Hola') }},</span> <span
                                         class="text-dark">@user('name')</span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
@@ -105,7 +105,7 @@
                                 <a class="dropdown-item" href="javascript:void(0)"
                                     onclick="event.preventDefault(); document.querySelector('#logout').submit()"><i
                                         data-feather="power" class="svg-icon mr-2 ml-1"></i>
-                                    {{ __('Logout') }}</a>
+                                    {{ __('Salir') }}</a>
                                 <form id="logout" action="@route(getRouteName() . '.logout')" method="post"> @csrf </form>
                             </div>
                         </li>

@@ -18,7 +18,7 @@
 
             <!-- Id_vehiculo Input -->
             <div class='form-group'>
-                <label for='input-id_vehiculo' class='col-sm-2 control-label '> {{ __('Id_vehiculo') }}</label>
+                <label for='input-id_vehiculo' class='col-sm-2 control-label '> {{ __('Vehiculo') }}</label>
                 <select id='input-id_vehiculo' wire:model.lazy='id_vehiculo'
                     class="form-control  @error('id_vehiculo') is-invalid @enderror">
                     @foreach (getCrudConfig('Entrada')->inputs()['id_vehiculo']['select'] as $key => $value)
@@ -31,7 +31,7 @@
             </div>
             <!-- Id_chofer Input -->
             <div class='form-group'>
-                <label for='input-id_chofer' class='col-sm-2 control-label '> {{ __('Id_chofer') }}</label>
+                <label for='input-id_chofer' class='col-sm-2 control-label '> {{ __('Chofer') }}</label>
                 <select id='input-id_chofer' wire:model.lazy='id_chofer'
                     class="form-control  @error('id_chofer') is-invalid @enderror">
                     @foreach (getCrudConfig('Entrada')->inputs()['id_chofer']['select'] as $key => $value)
@@ -75,7 +75,7 @@
 
         <div class="card-footer">
             <button type="submit" class="btn btn-info ml-4">{{ __('Update') }}</button>
-            <a href="@route(getRouteName() . '.entradas.read')" class="btn btn-default float-left">{{ __('Cancel') }}</a>
+            <a href="@route(getRouteName() . '.entrada.read')" class="btn btn-default float-left">{{ __('Cancel') }}</a>
         </div>
     </form>
 </div>

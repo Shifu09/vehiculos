@@ -4,12 +4,12 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="nav-small-cap"><span class="hide-menu">{{ __('Applications') }}</span></li>
+                <li class="nav-small-cap"><span class="hide-menu">{{ __('Menu') }}</span></li>
 
                 <li class="sidebar-item @isActive(getRouteName() . '.home', 'selected')">
                     <a class="sidebar-link @isActive(getRouteName() . '.home', 'active') " href="@route(getRouteName() . '.home')" aria-expanded="false">
                         <i data-feather="home" class="feather-icon"></i>
-                        <span class="hide-menu">{{ __('Home') }}</span>
+                        <span class="hide-menu">{{ __('Inicio') }}</span>
                     </a>
                 </li>
 
@@ -34,7 +34,7 @@
                 <li class="sidebar-item @isActive(getRouteName() . '.translation', 'selected')">
                     <a class="sidebar-link @isActive(getRouteName() . '.translation', 'active') " href="@route(getRouteName() . '.translation')" aria-expanded="false">
                         <i data-feather="globe" class="feather-icon"></i>
-                        <span class="hide-menu">{{ __('Translation') }}</span>
+                        <span class="hide-menu">{{ __('Traducciones') }}</span>
                     </a>
                 </li> --}}
 
@@ -47,7 +47,7 @@
                         onclick="event.preventDefault(); document.querySelector('#logout').submit()"
                         aria-expanded="false">
                         <i data-feather="log-out" class="feather-icon"></i>
-                        <span class="hide-menu">{{ __('Logout') }}</span>
+                        <span class="hide-menu">{{ __('Salir') }}</span>
                     </a>
                     <form id="logout" action="@route(getRouteName() . '.logout')" method="post"> @csrf </form>
                 </li>

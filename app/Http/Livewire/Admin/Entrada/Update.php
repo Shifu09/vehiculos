@@ -21,11 +21,16 @@ class Update extends Component
     protected $rules = [
         'id_vehiculo' => 'required',
         'id_chofer' => 'required',
-        'kilometraje' => 'required',
+        'kilometraje' => 'required|numeric',
         'fecha' => 'required',
-        'observaciones' => 'required',
     ];
-
+    protected $messages = [
+        'id_vehiculo.required' => 'El campo Vehiculo es obligatorio',
+        'id_chofer.required' => 'El campo Chofer es obligatorio',
+        'kilometraje.required' => 'El campo Kilometraje es obligatorio',
+        'kilometraje.numeric' => 'El campo Kilometraje debe ser numerico',
+        'fecha.required' => 'El campo Fecha es obligatorio',
+    ];
     public function mount(Entrada $Entrada)
     {
         $this->entrada = $Entrada;
@@ -56,7 +61,7 @@ class Update extends Component
             'observaciones' => $this->observaciones,
             'user_id' => auth()->id(),
         ]);
-        return redirect()->to('admin/entradas');
+        return redirect()->to('admin/entrada');
     }
 
     public function render()

@@ -18,6 +18,9 @@
                                     <p><strong>Placa:</strong> {{ $vehiculo->placa }}</p>
                                 </div>
                                 <div class="col-md-4">
+                                    <p><strong>Año:</strong> {{ $vehiculo->age }}</p>
+                                </div>
+                                <div class="col-md-4">
                                     <p><strong>Color:</strong> {{ $vehiculo->color }}</p>
                                 </div>
                                 <div class="col-md-4">
@@ -35,9 +38,9 @@
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
+                                                <th>Mantenimientos realizados</th>
                                                 <th>Fecha</th>
                                                 <th>Observaciones</th>
-                                                <th class="text-center">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -52,13 +55,13 @@
                                                     </td>
                                                     <td>{{ date('d/m/Y', strtotime($mantenimiento->fecha)) }}</td>
                                                     <td>{{ $mantenimiento->observaciones }}</td>
-                                                    <td class="text-center">
+                                                    {{-- <td class="text-center">
                                                         <a href="{{ route('admin.mantenimiento.print', $mantenimiento->id) }}"
                                                             class="btn btn-info btn-sm" target="_blank">
                                                             <i class="fas fa-print"></i>
                                                             Imprimir
                                                         </a>
-                                                    </td>
+                                                    </td> --}}
                                                 </tr>
                                             @endforeach
                                         </tbody>

@@ -27,7 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('admin/salida/print/{salida}', [\App\Http\Controllers\Admin\SalidaController::class, 'print'])->name('admin.salida.print');
 
 // Rutas para mantenimientos de vehículos
-Route::get('/admin/vehiculos/mantenimiento/{id}', App\Http\Livewire\Admin\Vehiculos\MantenimientoList::class)->name('admin.vehiculos.maintenance');
+Route::get('/admin/vehiculos/mantenimiento/{id}', App\Http\Livewire\Admin\Vehiculos\MantenimientoList::class)->name('mantenimiento');
 
 // Rutas para impresión de mantenimiento
 Route::get('admin/mantenimiento/{mantenimiento}/print', [\App\Http\Controllers\Admin\MantenimientoController::class, 'print'])->name('admin.mantenimiento.print');

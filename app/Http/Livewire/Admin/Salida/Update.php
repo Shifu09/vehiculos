@@ -26,7 +26,13 @@ class Update extends Component
         'kilometraje' => 'required',
         'fecha' => 'required',
     ];
-
+    protected $messages = [
+        'id_vehiculo.required' => 'El campo vehiculo es obligatorio.',
+        'id_chofer.required' => 'El campo chofer es obligatorio.',
+        'destino.required' => 'El campo destino es obligatorio.',
+        'kilometraje.required' => 'El campo kilometraje es obligatorio.',
+        'fecha.required' => 'El campo fecha es obligatorio.',
+    ];
     public function mount(Salida $Salida)
     {
         $this->salida = $Salida;
