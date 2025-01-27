@@ -1,4 +1,33 @@
 <div>
+    <style>
+        /* Estilos para la paginación simple */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .pagination a {
+            padding: 0.5rem 1rem;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            color: #007bff;
+            text-decoration: none;
+            border-radius: 0.25rem;
+        }
+        .pagination a:hover {
+            background-color: #e9ecef;
+            color: #0056b3;
+        }
+        .pagination span.text-muted {
+            padding: 0.5rem 1rem;
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            color: #6c757d;
+            border-radius: 0.25rem;
+        }
+    </style>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -66,6 +95,9 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    <div class="mt-4">
+                                        {{ $mantenimientos->links() }}
+                                    </div>
                                 </div>
                             @else
                                 <div class="alert alert-warning mt-3">
