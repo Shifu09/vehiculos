@@ -22,7 +22,7 @@ class Update extends Component
     public $estado;
 
     protected $rules = [
-        'codigo_auto' => 'required|unique:carros|numeric',
+        'codigo_auto' => 'required|numeric',
         'placa' => 'required|string',
         'marca' => 'required|string',
         'modelo' => 'required|string',

@@ -20,15 +20,17 @@ class Create extends Component
     protected $rules = [
         'id_vehiculo' => 'required',
         'id_chofer' => 'required',
-        'destino' => 'required',
-        'kilometraje' => 'required',
+        'destino' => 'required|string',
+        'kilometraje' => 'required|numeric',
         'fecha' => 'required',
     ];
     protected $messages = [
         'id_vehiculo.required' => 'El campo vehiculo es obligatorio.',
         'id_chofer.required' => 'El campo chofer es obligatorio.',
         'destino.required' => 'El campo destino es obligatorio.',
+        'destino.string' => 'El campo destino debe ser una cadena de texto.',
         'kilometraje.required' => 'El campo kilometraje es obligatorio.',
+        'kilometraje.numeric' => 'El campo kilometraje debe ser numérico.',
         'fecha.required' => 'El campo fecha es obligatorio.',
     ];
     public function updated($input)

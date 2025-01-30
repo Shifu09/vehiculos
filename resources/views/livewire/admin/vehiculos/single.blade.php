@@ -13,7 +13,7 @@
 
             @if (getCrudConfig('Vehiculos')->update && hasPermission(getRouteName() . '.vehiculos.update', 1, 1, $vehiculos))
                 <a href="{{ route('mantenimiento', $vehiculos->id) }}" class="btn text-primary mt-1">
-                    <i class="fa fa-file"></i>
+                    <i class="fa fa-file" title="{{ __('Mantenimientos') }}"></i>
                 </a>
             @endif
             @if (getCrudConfig('Vehiculos')->update && hasPermission(getRouteName() . '.vehiculos.update', 1, 1, $vehiculos))

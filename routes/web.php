@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('admin/salidapdf', [App\Http\Livewire\Admin\Salida\Single::class, 'pdf']);
-Route::get('/salida-report/{id}', [ReporteController::class, 'generateSalidaReport'])->name('salida.pdf');
+// Route::get('admin/salidapdf', [App\Http\Livewire\Admin\Salida\Single::class, 'pdf']);
+// Route::get('/salida-report/{id}', [ReporteController::class, 'generateSalidaReport'])->name('salida.pdf');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Rutas para reportes
