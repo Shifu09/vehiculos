@@ -62,3 +62,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+>.[!IMPORTANT]
+> En la siguiente ruta vendor\rezaamini-ir\laravel-easypanel\src\helpers.php comentar las lineas las siguienetes lineas de codigo, para que corra la implementacion en un servidor linux
+>       // $namee = ucwords($name);
+        // $className = ucwords($name);
+        // $namespace = "\\App\\CRUD\\{$name}Component";
+        // $appFilePath = app_path("/CRUD/{$name}Component.php");
+        // $nsExist = class_exists($namespace);
+        // $filePathExist = file_exists($appFilePath);
